@@ -131,6 +131,23 @@ body a{color: #fff;}
     position: relative;
     z-index: 2;
 }
+.submenu-border{
+    border: 1px solid transparent;
+    background: #151515;
+    position:relative;
+}
+.submenu-border::after{
+    position:absolute;
+    content: "";
+    bottom: -10px;
+    right: 30px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #151515;
+}
+.background-hover:hover{
+    background-color: #17924e;
+}
 .hero{
     position: relative;
     top:0;
@@ -506,8 +523,6 @@ body a{color: #fff;}
 .filimo-watching-devices .filimo-watching-devices-holder .text-holder .subscription-button{
     margin-top: 20px;
     display: inline-block;
-    background-color: #1cb561;
-    border:1px solid #000;
     border-radius:8px;
     padding:8px 20px;
     color:#fff;
@@ -942,4 +957,48 @@ body a{color: #fff;}
     align-items:center;
     gap:18px
 }
-
+.footer .footer-links .right-section ul .another-link{
+  position:relative;
+}
+.footer .footer-links .right-section ul .another-link .holder{
+    position:absolute;
+    top:-88px;
+    right: -5px;
+    min-width:170px;
+    text-align: right;
+    line-height: 35px;
+    padding-right: 6px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .footer .footer-links .right-section .another-link:hover .holder {
+    opacity: 1;
+    visibility: visible;
+  }
+  .footer .footer-links .left-section  {
+    position:relative;
+  }
+  .footer .footer-links .left-section .holder{
+    position:absolute;
+    top:-160px;
+    right: -5px;
+    min-width:170px;
+    text-align: right;
+    line-height: 35px;
+    padding-right: 6px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .footer .footer-links .left-section img{
+    width: 50px;
+    height: auto;
+    padding-left: 30px;
+  }
+  .footer .footer-links .left-section i{
+    font-size: 20px;
+    padding-left: 30px;
+  }
+  .footer .footer-links .left-section:hover .holder {
+    opacity: 1;
+    visibility: visible;
+  }
