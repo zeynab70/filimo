@@ -1,0 +1,312 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/styles/fontawesome/fontawesome.css" />
+        <link rel="stylesheet" href="assets/styles/fontawesome/brands.css" />
+        <link rel="stylesheet" href="assets/styles/fontawesome/solid.css" />
+        <link rel="stylesheet" href="assets/styles/fontawesome/regular.css" />
+        <style>
+  @font-face {
+    font-family: vazir;
+    src: url('assets/fonts/vazir/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: vazir;
+    src: url('assets/fonts/vazir/Vazirmatn-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+            html{
+                font-size:14px;
+            }
+            body{
+                direction: rtl;
+                margin: 0;
+                background-color: #151515;
+                color: #fff;
+                font-family: vazir;
+                font-weight: 400;
+                font-size:1rem;
+
+            }
+            *,*:after,*:before{
+                box-sizing:border-box;
+            }
+            h3{
+                font-family: vazir;
+                font-weight: 800;
+            }
+            a{
+                text-decoration: none;
+            }
+            .container1{
+                width: 1100px;
+                margin: 0 auto;
+            }
+            .container2{
+                width: 400px;
+                margin: 0 auto;
+            }
+            .intermittent-questions{
+                background-color: #000;
+                color:#fff;
+                text-align: center;
+                padding:90px 0;
+            }
+            .intermittent-questions .title{
+                font-size: 1rem;
+            }
+            .intermittent-questions .description{
+                margin-bottom:30px;
+                color: #9e9e9e;
+            }
+            .intermittent-questions .information-list{
+                width:900px;
+                margin:0 auto;
+            }
+            .intermittent-questions .information-list a .information-list-holder{
+                 color:#fff;
+                border:1px solid #33353d;;
+                border-radius:10px;
+                padding:16px 15px;
+                margin-bottom: 10px;
+                background-color: #ffffff05;
+                min-height: 59px;
+            }
+            .intermittent-questions .information-list a .fistRow{
+                display:flex;
+                justify-content: space-between; 
+            }
+            .firstRow-i-style{
+                color: #f4843f;
+            }
+            .secondRow-span-style{
+                color: #fdc13c
+            }
+            .intermittent-questions .information-list a #secondRowP1{
+                display: none;
+                text-align: right;
+                color: #9e9e9e;
+            }
+            .intermittent-questions .information-list a #secondRowP2{
+                display: none;
+                text-align: right;
+                color: #9e9e9e;
+            }
+            .intermittent-questions .information-list a #secondRowP3{
+                display: none;
+                text-align: right;
+                color: #9e9e9e;
+            }
+            .intermittent-questions .information-list a #secondRowP4{
+                display: none;
+                text-align: right;
+                color: #9e9e9e;
+            }
+            .intermittent-questions .information-list a #firstRowI1.firstRowOpenI,
+            .intermittent-questions .information-list a #firstRowI2.firstRowOpenI,
+            .intermittent-questions .information-list a #firstRowI3.firstRowOpenI,
+            .intermittent-questions .information-list a #firstRowI4.firstRowOpenI
+            {
+                transform: rotate(45deg);
+            }
+            .intermittent-questions .information-list a #firstRowSpan1.firstRowOpenSpan,
+            .intermittent-questions .information-list a #firstRowSpan2.firstRowOpenSpan,
+            .intermittent-questions .information-list a #firstRowSpan3.firstRowOpenSpan,
+            .intermittent-questions .information-list a #firstRowSpan4.firstRowOpenSpan
+            {
+                color: #f4843f;
+            }
+            .intermittent-questions .information-list a #secondRowP1.secondRowOpenP,
+            .intermittent-questions .information-list a #secondRowP2.secondRowOpenP,
+            .intermittent-questions .information-list a #secondRowP3.secondRowOpenP,
+            .intermittent-questions .information-list a #secondRowP4.secondRowOpenP
+            {
+                display: block;
+            }
+            .bmi{
+                background-color: #000;
+                color:#fff;
+                text-align: center;
+                margin-top: 60px;
+                padding: 50px 0;
+            }
+            .bmi .weight{
+                border: 1px solid #33353d;
+                padding: 20px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .bmi .height{
+                border: 1px solid #33353d;
+                padding: 20px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .bmi .holder #bmiResut1,
+            .bmi .holder #bmiResut2,
+            .bmi .holder #bmiResut3,
+            .bmi .holder #bmiResut4,
+            .bmi .holder #bmiResut5,
+            .bmi .holder #bmiResut6{
+                display: none;
+            }
+            .bmi #bmiResut1.result1,
+            .bmi #bmiResut2.result2,
+            .bmi #bmiResut3.result3,
+            .bmi #bmiResut4.result4,
+            .bmi #bmiResut4.result5,
+            .bmi #bmiResut4.result6{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container1">
+            <div class="intermittent-questions">
+                <div class="title">
+                    <h3>سوالات متداول</h3>
+                </div>
+                <div class="description">
+                    <p>سوال شایع دیگر کاربران شاید برای شما پیش آمده باشد.</p>
+                </div>
+                <div class="information-list">
+                    <a href="#">
+                        <div class="information-list-holder" onclick="changeList1()">
+                            <div class="fistRow">
+                                <span  id="firstRowSpan1">آیا می‌توانم فیلم‌های موجود در فیلیمو را دانلود کنم؟</span>
+                                <i   id="firstRowI1" class="fa-solid fa-plus icon-color firstRow-i-style"></i>
+                            </div>
+                            <p id ="secondRowP1">بله، شما می‌توانید همه فیلم‌ و سریال‌های فیلیمو را داخل خود اپلیکیشن فیلیمو دانلود کنید و برای زمان‌هایی که اینترنت ندارید یا در سفر، هواپیما و قطار آ‌ن‌ها را تماشا کنید. برای دانلود هم از طریق رایانه و هم از طریق خود اپلیکیشن فیلیمو می‌توانید اقدام‌کنید. برای جزییات بیشتر می‌توانید فیلم‌های آموزشی مربوط به
+                                <span class="secondRow-span-style">دانلود از طریق سایت</span> و 
+                                  <span class="secondRow-span-style"> دانلود از طریق  اپلیکیشن</span>
+                                   را تماشا کنید.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="information-list-holder" onclick="changeList2()">
+                            <div class="fistRow">
+                                <span id="firstRowSpan2">آیا فیلیمو برای خارج از ایران در دسترس است؟</span>
+                                <i  id="firstRowI2" class="fa-solid fa-plus icon-color firstRow-i-style"></i>
+                            </div>
+                            <p id ="secondRowP2">خیر. درحال حاضر تماشای فیلیمو فقط در داخل کشور فعال است و امکان تماشا برای افراد خارج از کشور فعال نیست.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="information-list-holder" onclick="changeList3()">
+                            <div class="fistRow">
+                                <span  id="firstRowSpan3">آیا برای تماشای فیلم‌های اکران آنلاین، باید اشتراک بخرم؟</span>
+                                <i  id="firstRowI3" class="fa-solid fa-plus icon-color firstRow-i-style"></i>
+                            </div>
+                            <p id ="secondRowP3">تماشای فیلم‌های اکران آنلاین مانند تماشا در سینمای واقعی است؛ یعنی برای دیدن هر فیلم که در اکران آنلاین است باید بلیت تهیه کنید و به جای رفتن به سالن سینما، 8 ساعت فرصت دارید که آن فیلم را از داخل خانه تماشا کنید. </p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="information-list-holder" onclick="changeList4()">
+                            <div class="fistRow">
+                                <span id="firstRowSpan4">از کجا می‌توانم نرم‌افزار اندروید یا iOS فیلیمو را دانلود کنم؟</span>
+                                <i id="firstRowI4" class="fa-solid fa-plus icon-color firstRow-i-style"></i>
+                            </div>
+                            <p id ="secondRowP4">برای نصب نرم‌افزار اندرویدی فیلیمو می‌توانید ازطریق کافه بازار یا مایکت اقدام به دانلود کنید. یا می‌توانید روی گزینه روبرو بزنید و به‌طور مستقیم فایل نرم‌افزار را دریافت کنید.
+                                 <span class="secondRow-span-style">(دانلود مستقیم نرم‌افزار اندروید)</span>  
+                                 برای دانلود نرم‌افزار iOS فیلیمو نیز کافیست روی گزینه روبرو بزنید و به‌طور مستقیم فایل نرم‌افزار را دریافت کنید.
+                                 <span class="secondRow-span-style">(دانلود مستقیم نرم‌افزار iOS)</span> </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="bmi">
+                <form>
+                    <label for="weight">وزن را وارد کن:</label><br>
+                    <input type="number" id="weight" ><br>
+                    <label for="height">قد را وارد کن:</label><br>
+                    <input type="number" id="height">
+                </form>
+                <button onclick="bmiFunction()">
+                    محاسبه وزن
+                </button>
+                <div class="holder">
+                    <div id="bmiResut1">شما دچار کمبود وزن هستید</div>
+                    <div id="bmiResut2"> وزن شما ایده آل است</div>
+                    <div id="bmiResut3"> شما دچار اضافه وزن هستید</div>
+                    <div id="bmiResut4"> شما دچار چاقی نوع یک هستید</div>
+                    <div id="bmiResut5"> شما دچار چاقی نوع دو هستید</div>
+                    <div id="bmiResut6"> شما دچار چاقی نوع 3 هستید.</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function changeList1(){
+                var togSecondP1=document.getElementById("secondRowP1");
+                var togFirstSpan1=document.getElementById("firstRowSpan1");
+                var togFirstI1=document.getElementById("firstRowI1");
+                togSecondP1.classList.toggle("secondRowOpenP");
+                togFirstSpan1.classList.toggle("firstRowOpenSpan");
+                togFirstI1.classList.toggle("firstRowOpenI");
+            }
+            function changeList2(){
+                var togSecondP2=document.getElementById("secondRowP2");
+                var togFirstSpan2=document.getElementById("firstRowSpan2");
+                var togFirstI2=document.getElementById("firstRowI2");
+                togSecondP2.classList.toggle("secondRowOpenP");
+                togFirstSpan2.classList.toggle("firstRowOpenSpan");
+                togFirstI2.classList.toggle("firstRowOpenI");
+            }
+            function changeList3(){
+                var togSecondP3=document.getElementById("secondRowP3");
+                var togFirstSpan3=document.getElementById("firstRowSpan3");
+                var togFirstI3=document.getElementById("firstRowI3");
+                togSecondP3.classList.toggle("secondRowOpenP");
+                togFirstSpan3.classList.toggle("firstRowOpenSpan");
+                togFirstI3.classList.toggle("firstRowOpenI");
+            }
+            function changeList4(){
+                var togSecondP4=document.getElementById("secondRowP4");
+                var togFirstSpan4=document.getElementById("firstRowSpan4");
+                var togFirstI4=document.getElementById("firstRowI4");
+                togSecondP4.classList.toggle("secondRowOpenP");
+                togFirstSpan4.classList.toggle("firstRowOpenSpan");
+                togFirstI4.classList.toggle("firstRowOpenI");
+            }
+
+            function bmiFunction(){
+                var weight=document.getElementById("weight").value;
+                var height=document.getElementById("height").value;
+                var result1=document.getElementById("bmiResut1");
+                var result2=document.getElementById("bmiResut2");
+                var result3=document.getElementById("bmiResut3");
+                var result4=document.getElementById("bmiResut4");
+                var result5=document.getElementById("bmiResut5");
+                 var result6=document.getElementById("bmiResut6");
+                var result;
+                var multiplication;
+                multiplication=(height*height)/10000;
+                result= weight /multiplication;
+                if(result<18.5){
+                    result1.classList.add("result1");
+                }
+                else if(result>=18.5 && result <25){
+                    result2.classList.add("result2");
+                }
+                else if(result>=25 && result <30){
+                    result3.classList.add("result3");
+                }
+                else if(result>=30 && result <35){
+                    result4.classList.add("result4");
+                }
+                else if(result>=35 && result <40){
+                    result5.classList.add("result5");
+                }
+                else if(result>=40){
+                    result6.classList.add("result6");
+                }
+            }
+        </script>
+    </body>
+</html>
